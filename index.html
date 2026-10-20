@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121b">
+  <title>AI Duo — ChatGPT + Gemini</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-icon" aria-hidden="true">✦</div>
+      <div>
+        <h1>AI Duo</h1>
+        <p>ChatGPT + Google Gemini</p>
+      </div>
+      <span class="status-pill">AI CHAT</span>
+    </header>
+
+    <main>
+      <section class="welcome" id="welcome">
+        <div class="sparkle">✧</div>
+        <h2>What can I help you with?</h2>
+        <p>Choose an AI, ask a question, or compare both answers.</p>
+      </section>
+
+      <div class="mode-switch" role="group" aria-label="Choose AI mode">
+        <button type="button" class="mode-button selected" data-mode="openai" aria-pressed="true">
+          <span class="mode-symbol">◉</span> ChatGPT
+        </button>
+        <button type="button" class="mode-button" data-mode="gemini" aria-pressed="false">
+          <span class="mode-symbol gemini-symbol">✦</span> Gemini
+        </button>
+        <button type="button" class="mode-button" data-mode="both" aria-pressed="false">
+          <span class="mode-symbol">⇄</span> Compare
+        </button>
+      </div>
+
+      <section id="chat" class="chat" aria-live="polite" aria-label="Chat messages"></section>
+      <div id="notice" class="notice" role="status"></div>
+
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="message">Your message</label>
+        <textarea id="message" rows="1" maxlength="6000" placeholder="Ask anything..." required></textarea>
+        <button id="send-button" type="submit" aria-label="Send message">➤</button>
+      </form>
+      <p class="disclaimer">AI can make mistakes. Check important information. API usage may cost money.</p>
+    </main>
+  </div>
+</body>
+</html>
